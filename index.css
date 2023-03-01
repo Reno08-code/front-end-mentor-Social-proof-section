@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+:root {
+  --Very-Dark-Magenta: hsl(300, 43%, 22%);
+  --Soft-Pink: hsl(333, 80%, 67%);
+  --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+  --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+  --White: hsl(0, 0%, 100%);
+  --ff: 'League Spartan', sans-serif;
+  --fs-400:.8125rem;
+  --fs-500:.9625rem;
+  --fs-900:2rem;
+}
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body{
+    font-size: 15px;
+   display: grid;
+   grid-template-columns: 1fr;
+   min-height: 100vh;
+   font-family:var(--ff) ;
+ background-image:url(/images/bg-pattern-top-mobile.svg),url(/images/bg-pattern-bottom-mobile.svg) ;
+background-repeat: no-repeat;
+background-position: top left,bottom right;
+background-size: 100% auto,100% auto;
+}
+
+main{
+   margin: auto;
+}
+
+main .wrapper{
+    max-width: 400px; /*这个设定很好！缩小的时候会responsive*/
+    padding: 3.3rem 1rem;
+}
+
+main .wrapper .upper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 2rem;
+}
+
+main .wrapper .upper .intro{
+  padding:0 0.5rem;
+}
+
+h1{
+  font-size:var(--fs-900) ;
+  color: var(--Very-Dark-Magenta);
+padding-bottom: 1rem;
+}
+
+main .wrapper .upper p{
+  font-size: var(--fs-400);
+  color: var(--Dark-Grayish-Magenta);
+  font-weight: 500;
+  line-height:0.9rem;
+  padding-bottom: 1.8rem;
+ }
+ main .wrapper .star_rate{
+  width: 100%;
+ }
+
+ .star_rate .star_card{
+  max-width: 25rem;
+  padding:1rem ;
+  background-color: var(--Light-Grayish-Magenta);
+  margin:0 auto 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:10px;
+ 
+ }
+ .star_rate .star_card .star_text{
+ font-size: var(--fs-500);
+ font-weight: bold;
+  color:var(--Very-Dark-Magenta);
+  padding-top:1rem;
+  padding-bottom: 0;
+  font-size:15px;
+ }
+
+.star_rate .stars{
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/*把图片和文字再套进一个DIV 等于把图片变成了block element 然后才能 用flex,才会叠在文字上面|*/
+main .wrapper .bottom_reviews{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+padding:0 2rem;
+
+}
+main .wrapper .bottom_reviews .card{
+  border-radius: 5px;
+  background-color: var(--Very-Dark-Magenta);
+  margin-bottom: 2rem;
+  padding:1.5rem;
+  text-align: center;
+  color: var(--Light-Grayish-Magenta);
+  line-height: 1.3rem;
+}
+
+
+main .wrapper .bottom_reviews .card .info{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 1rem;
+}
+
+main .wrapper .bottom_reviews .card .info img{
+  border-radius: 50%;
+  width:50%;
+
+}
+
+main .wrapper .bottom_reviews .card .info .status{
+  margin-right:2rem;
+}
+main .wrapper .bottom_reviews .card .info .status p{
+  color:var(--Soft-Pink);
+}
+
+@media only screen and (min-width: 768px) {
+  body{
+    background-image: url(./images/bg-pattern-top-desktop.svg),url(./images/bg-pattern-bottom-desktop.svg)
+    background-repeat: no-repeat;
+    background-position: top left,bottom right;
+    background-size: 40% auto,75% 75%;
+    
+
+  }
+  main{
+    max-width: 1440px;
+    padding: 6rem 6rem;
+    margin: 0;
+    
+  }
+main .wrapper{
+   max-width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    }
+main .wrapper .upper{
+  
+  display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-items:center;
+    padding:1.5rem 0rem;
+}
+main .wrapper .upper .intro
+{line-height: 3rem;
+  padding:0 9rem 0 2rem;
+  text-align:left;
+  margin-left:2rem;
+ }
+ 
+ main .wrapper .upper .star_rate .star_card .star_card_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.star_card:nth-child(1){
+  margin-left: 6rem;
+}
+ .star_card:nth-child(2){
+  margin-left: 11rem;
+}
+
+.star_card:nth-child(3){
+  margin-left: 14rem;
+}
+.star_card .star_card_content .stars{
+  margin-right: 1.8rem;
+}
+.star_card .star_card_content .star_text{
+  padding:0;
+}
+main .wrapper .bottom_reviews{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  margin-top: 2rem;
+  
+}
+main .wrapper .bottom_reviews .card{
+  margin: 0 0.8rem;
+}
+main .wrapper .bottom_reviews .card:nth-child(2){
+  margin-top: 2rem;
+}
+main .wrapper .bottom_reviews .card:nth-child(3){
+  margin-top: 4rem;
+}
+main .wrapper .bottom_reviews .card .info .status{
+  margin-right:6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
